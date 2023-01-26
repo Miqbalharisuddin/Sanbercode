@@ -1,0 +1,852 @@
+{
+	"info": {
+		"_postman_id": "4b90c218-897a-429b-a6a8-f6dfe0072fac",
+		"name": "Explore Dummy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25335406"
+	},
+	"item": [
+		{
+			"name": "Dummy Json",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"kminchelle\",\r\n    \"password\": \"0lelplR\"\r\n    \r\n  }"
+						},
+						"url": {
+							"raw": "{{urlDummyJson}}/auth/login",
+							"host": [
+								"{{urlDummyJson}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlDummyJson}}/users",
+							"host": [
+								"{{urlDummyJson}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlDummyJson}}/users/1",
+							"host": [
+								"{{urlDummyJson}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Muhammad\",\r\n    \"lastName\" : \"Ovi\",\r\n    \"age\" : \"250\"\r\n\r\n  }"
+						},
+						"url": {
+							"raw": "{{urlDummyJson}}/users/add",
+							"host": [
+								"{{urlDummyJson}}"
+							],
+							"path": [
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"lastName\": \"Owais\"\r\n}"
+						},
+						"url": {
+							"raw": "{{urlDummyJson}}/users/1",
+							"host": [
+								"{{urlDummyJson}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlDummyJson}}/users/1",
+							"host": [
+								"{{urlDummyJson}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rest Api",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"employee_name\", response.data[0].employee_name);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlRestapi}}/employees",
+							"host": [
+								"{{urlRestapi}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get All Employees",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urlRestapi}}/employees",
+									"host": [
+										"{{urlRestapi}}"
+									],
+									"path": [
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 14 Jan 2023 02:54:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.21.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "636"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=21600"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 14 Jan 2023 08:54:24 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "host-header",
+									"value": "c2hhcmVkLmJsdWVob3N0LmNvbQ=="
+								},
+								{
+									"key": "X-Endurance-Cache-Level",
+									"value": "2"
+								},
+								{
+									"key": "X-nginx-cache",
+									"value": "WordPress"
+								},
+								{
+									"key": "X-Server-Cache",
+									"value": "false"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"employee_name\": \"Tiger Nixon\",\n            \"employee_salary\": 320800,\n            \"employee_age\": 61,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 2,\n            \"employee_name\": \"Garrett Winters\",\n            \"employee_salary\": 170750,\n            \"employee_age\": 63,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 3,\n            \"employee_name\": \"Ashton Cox\",\n            \"employee_salary\": 86000,\n            \"employee_age\": 66,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 4,\n            \"employee_name\": \"Cedric Kelly\",\n            \"employee_salary\": 433060,\n            \"employee_age\": 22,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"employee_name\": \"Airi Satou\",\n            \"employee_salary\": 162700,\n            \"employee_age\": 33,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 6,\n            \"employee_name\": \"Brielle Williamson\",\n            \"employee_salary\": 372000,\n            \"employee_age\": 61,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 7,\n            \"employee_name\": \"Herrod Chandler\",\n            \"employee_salary\": 137500,\n            \"employee_age\": 59,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"employee_name\": \"Rhona Davidson\",\n            \"employee_salary\": 327900,\n            \"employee_age\": 55,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"employee_name\": \"Colleen Hurst\",\n            \"employee_salary\": 205500,\n            \"employee_age\": 39,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 10,\n            \"employee_name\": \"Sonya Frost\",\n            \"employee_salary\": 103600,\n            \"employee_age\": 23,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 11,\n            \"employee_name\": \"Jena Gaines\",\n            \"employee_salary\": 90560,\n            \"employee_age\": 30,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 12,\n            \"employee_name\": \"Quinn Flynn\",\n            \"employee_salary\": 342000,\n            \"employee_age\": 22,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 13,\n            \"employee_name\": \"Charde Marshall\",\n            \"employee_salary\": 470600,\n            \"employee_age\": 36,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 14,\n            \"employee_name\": \"Haley Kennedy\",\n            \"employee_salary\": 313500,\n            \"employee_age\": 43,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 15,\n            \"employee_name\": \"Tatyana Fitzpatrick\",\n            \"employee_salary\": 385750,\n            \"employee_age\": 19,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 16,\n            \"employee_name\": \"Michael Silva\",\n            \"employee_salary\": 198500,\n            \"employee_age\": 66,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 17,\n            \"employee_name\": \"Paul Byrd\",\n            \"employee_salary\": 725000,\n            \"employee_age\": 64,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 18,\n            \"employee_name\": \"Gloria Little\",\n            \"employee_salary\": 237500,\n            \"employee_age\": 59,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 19,\n            \"employee_name\": \"Bradley Greer\",\n            \"employee_salary\": 132000,\n            \"employee_age\": 41,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 20,\n            \"employee_name\": \"Dai Rios\",\n            \"employee_salary\": 217500,\n            \"employee_age\": 35,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 21,\n            \"employee_name\": \"Jenette Caldwell\",\n            \"employee_salary\": 345000,\n            \"employee_age\": 30,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 22,\n            \"employee_name\": \"Yuri Berry\",\n            \"employee_salary\": 675000,\n            \"employee_age\": 40,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 23,\n            \"employee_name\": \"Caesar Vance\",\n            \"employee_salary\": 106450,\n            \"employee_age\": 21,\n            \"profile_image\": \"\"\n        },\n        {\n            \"id\": 24,\n            \"employee_name\": \"Doris Wilder\",\n            \"employee_salary\": 85600,\n            \"employee_age\": 23,\n            \"profile_image\": \"\"\n        }\n    ],\n    \"message\": \"Successfully! All records has been fetched.\"\n}"
+						},
+						{
+							"name": "Method Not Allowed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{urlRestapi}}/employees",
+									"host": [
+										"{{urlRestapi}}"
+									],
+									"path": [
+										"employees"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 14 Jan 2023 02:58:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "allow",
+									"value": "GET, HEAD"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Upgrade",
+									"value": "h2,h2c"
+								},
+								{
+									"key": "Connection",
+									"value": "Upgrade"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "host-header",
+									"value": "c2hhcmVkLmJsdWVob3N0LmNvbQ=="
+								},
+								{
+									"key": "X-Endurance-Cache-Level",
+									"value": "2"
+								},
+								{
+									"key": "X-nginx-cache",
+									"value": "WordPress"
+								},
+								{
+									"key": "Content-Length",
+									"value": "522"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta name=\"robots\" content=\"noindex,nofollow,noarchive\" />\n        <title>An Error Occurred: Method Not Allowed</title>\n        <style>body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; margin: 0; }\n.container { margin: 30px; max-width: 600px; }\nh1 { color: #dc3545; font-size: 24px; }\nh2 { font-size: 18px; }</style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <h1>Oops! An Error Occurred</h1>\n            <h2>The server returned a \"405 Method Not Allowed\".</h2>\n            <p>\n        Something is broken. Please let us know what you were doing when this error occurred.\n        We will fix it as soon as possible. Sorry for any inconvenience caused.\n    </p>\n        </div>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Get Single Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlRestapi}}/employee/1",
+							"host": [
+								"{{urlRestapi}}"
+							],
+							"path": [
+								"employee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"statusnya\", response.status);\r",
+									"pm.collectionVariables.set(\"namanyha\", response.data.name);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"iqbal\",\"salary\"\r\n:\"5000000\",\"age\":\"23\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlRestapi}}/create",
+							"host": [
+								"{{urlRestapi}}"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"test\",\"salary\":\"123\",\"age\":\"23\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlRestapi}}/update/1",
+							"host": [
+								"{{urlRestapi}}"
+							],
+							"path": [
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlRestapi}}/delete/2",
+							"host": [
+								"{{urlRestapi}}"
+							],
+							"path": [
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reqress",
+			"item": [
+				{
+					"name": "Get List User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlReqress}}/users?page=1",
+							"host": [
+								"{{urlReqress}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlReqress}}/users/1",
+							"host": [
+								"{{urlReqress}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlReqress}}/register",
+							"host": [
+								"{{urlReqress}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"cityslicka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlReqress}}/login",
+							"host": [
+								"{{urlReqress}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlReqress}}/users?delay=3",
+							"host": [
+								"{{urlReqress}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "delay",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"nama\", response.name);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"jobtitle\", \"Quality Assurance\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"yanto\",\r\n    \"job\": \"{{jobtitle}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlReqress}}/users",
+							"host": [
+								"{{urlReqress}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Petstore",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPetstore}}/pet/4",
+							"host": [
+								"{{urlPetstore}}"
+							],
+							"path": [
+								"pet",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restfull Booker",
+			"item": [
+				{
+					"name": "Auth",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var password = pm.environment.get(\"variable_key\");\r",
+									"console.log(\"password is\" + password);\r",
+									"if(password === undefined) {\r",
+									"    console.log(\"Setting password to password123\");\r",
+									"    pm.environment.set(\"password\", \"password123\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"{{password}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{urlRestful}}/auth",
+							"host": [
+								"{{urlRestful}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlRestful}}/booking",
+							"host": [
+								"{{urlRestful}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlRestful}}/booking/1",
+							"host": [
+								"{{urlRestful}}"
+							],
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Booking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"booking_id\", response.bookingid);\r",
+									"\r",
+									"\r",
+									"pm.globals.set(\"firstname\", response.booking.firstname);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\" : \"Salisu\",\r\n    \"lastname\" : \"Basna\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlRestful}}/booking",
+							"host": [
+								"{{urlRestful}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlRestful}}/ping",
+							"host": [
+								"{{urlRestful}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlDummyJson",
+			"value": "https://dummyjson.com"
+		},
+		{
+			"key": "urlRestapi",
+			"value": "https://dummy.restapiexample.com/api/v1"
+		},
+		{
+			"key": "urlReqress",
+			"value": "https://reqres.in/api"
+		},
+		{
+			"key": "urlPetstore",
+			"value": "https://petstore.swagger.io/v2"
+		},
+		{
+			"key": "urlRestful",
+			"value": "https://restful-booker.herokuapp.com"
+		},
+		{
+			"key": "booking_id",
+			"value": ""
+		},
+		{
+			"key": "employee_name",
+			"value": ""
+		},
+		{
+			"key": "statusnya",
+			"value": ""
+		},
+		{
+			"key": "namanyha",
+			"value": ""
+		},
+		{
+			"key": "nama",
+			"value": ""
+		},
+		{
+			"key": "jobtitle",
+			"value": ""
+		}
+	]
+}
