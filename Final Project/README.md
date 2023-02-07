@@ -2,6 +2,7 @@
 
 ## Nama Kelompok
 Perkenalkan kami dari kelompok 2 - Sanbercode (Quality Assurance)
+Testing Website https://itera-qa.azurewebsites.net/
 Nama Kelompok:
 - I Gde Bayu Priyambada Marayasa
 - Farah Amalia
